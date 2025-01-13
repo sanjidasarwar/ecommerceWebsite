@@ -4,7 +4,7 @@ import { ShopContext } from "../context/shopContext";
 
 function ProductItem({ id, image, name, price }) {
   const { currency } = useContext(ShopContext);
-  // console.log(image);
+  console.log(id);
 
   return (
     <div>
