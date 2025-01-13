@@ -59,7 +59,7 @@ const Hero = () => {
               </h6>
               <a
                 href="#"
-                className="px-6 py-3 bg-primary hover:bg-teal-600 text-white rounded-full text-sm transition"
+                className="px-6 py-3 bg-[#E12A28] hover:bg-primary text-white rounded-full text-sm transition"
               >
                 Shop Now
               </a>

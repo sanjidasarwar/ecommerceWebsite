@@ -112,19 +112,6 @@ export const products = [
     bestseller: true,
   },
   {
-    _id: "p006",
-    name: "Women Floral Maxi Dress",
-    description:
-      "Flowing maxi dress with floral prints. Great for summer or casual events.",
-    price: 400,
-    image: [p_img1],
-    category: "Women",
-    subCategory: "Dresses",
-    sizes: ["S", "M", "L", "XL"],
-    date: Date.now(),
-    bestseller: true,
-  },
-  {
     _id: "p007",
     name: "Men Formal Shirt",
     description:

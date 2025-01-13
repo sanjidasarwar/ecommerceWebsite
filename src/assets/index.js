@@ -47,6 +47,9 @@ import p_img47 from "./p_img47.png";
 import p_img48 from "./p_img48.png";
 import p_img49 from "./p_img49.png";
 import p_img50 from "./p_img50.png";
+import customer_support from "./customer_support.png";
+import exchange_policy from "./exchange_policy.png";
+import return_policy from "./return_policy.png";
 
 export {
   logo,
@@ -98,4 +101,7 @@ export {
   p_img48,
   p_img49,
   p_img50,
+  customer_support,
+  exchange_policy,
+  return_policy,
 };
