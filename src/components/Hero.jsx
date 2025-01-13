@@ -42,17 +42,25 @@ const Hero = () => {
           <div
             key={slide.id}
             className="flex-none w-full h-[500px] bg-cover bg-center relative"
-            style={{ backgroundImage: slide.background }}
+            style={{
+              backgroundImage: slide.background,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
           >
-            <div className="absolute inset-0 flex flex-col justify-start items-start p-8 text-left translate-x-10 translate-y-10">
-              <h3 className="text-lg uppercase tracking-widest">
+            <div className="absolute inset-0 flex flex-col justify-start items-start p-8 text-left translate-x-12 translate-y-12">
+              <h3 className="text-primary capitalize tracking-widest text-2xl font-semibold">
                 {slide.subtitle}
               </h3>
-              <h1 className="text-4xl font-bold mb-2">{slide.title}</h1>
-              <h6 className="text-lg mb-4">{slide.price}</h6>
+              <h1 className="text-5xl font-extrabold my-2 text-[#333] capitalize">
+                {slide.title}
+              </h1>
+              <h6 className="text-primary text-lg mb-6 capitalize font-semibold">
+                {slide.price}
+              </h6>
               <a
                 href="#"
-                className="px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white rounded-full text-sm transition"
+                className="px-6 py-3 bg-primary hover:bg-teal-600 text-white rounded-full text-sm transition"
               >
                 Shop Now
               </a>
