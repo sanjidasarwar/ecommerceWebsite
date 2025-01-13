@@ -10,6 +10,7 @@ import PlaceOrder from "./pages/PlaceOrder";
 import Contact from "./pages/Contact";
 import Login from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
