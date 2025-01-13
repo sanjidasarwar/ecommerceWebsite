@@ -59,7 +59,7 @@ const Navbar = () => {
 
       {/* Sidebar Menu */}
       <div
-        className={`absolute top-0 left-0 bottom-0 overflow-hidden bg-white transition-all ${
+        className={`absolute top-0 left-0 bottom-0 overflow-hidden z-20 bg-white transition-all ${
           visible ? "w-full" : "w-0"
         }`}
       >
