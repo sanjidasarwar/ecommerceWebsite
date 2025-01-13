@@ -2,7 +2,6 @@ import React from "react";
 import { slider1, slider2, slider3 } from "../assets";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
 const Hero = () => {
   const slides = [
     {
