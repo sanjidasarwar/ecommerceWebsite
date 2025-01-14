@@ -7,30 +7,55 @@ import ProductItem from "../components/ProductItem";
 const Collection = () => {
   const [showFiilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
-  const [catagory, setCatagory] = useState([]);
-  const [subcatagory, setSubcatagory] = useState([]);
+  const [category, setCategory] = useState([]);
+  const [subCategory, setsubCategory] = useState([]);
 
   const { products } = useContext(ShopContext);
 
+  console.log(filterProducts);
+
   const toggleCatagory = (e) => {
-    if (catagory.includes(e.target.value)) {
-      setCatagory((prev) => prev.filter((item) => item !== e.target.value));
+    if (category.includes(e.target.value)) {
+      setCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
-      setCatagory((prev) => [...prev, e.target.value]);
+      setCategory((prev) => [...prev, e.target.value]);
     }
   };
 
-  const toggleSubcatagory = (e) => {
-    if (subcatagory.includes(e.target.value)) {
-      setSubcatagory((prev) => prev.filter((item) => item !== e.target.value));
+  const togglesubCategory = (e) => {
+    if (subCategory.includes(e.target.value)) {
+      setsubCategory((prev) => prev.filter((item) => item !== e.target.value));
     } else {
-      setSubcatagory((prev) => [...prev, e.target.value]);
+      setsubCategory((prev) => [...prev, e.target.value]);
     }
+  };
+
+  const applyFilter = () => {
+    let productsCopy = products.slice();
+    console.log(productsCopy);
+
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        category.includes(item.category)
+      );
+    }
+
+    if (subCategory.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        subCategory.includes(item.subCategory)
+      );
+    }
+
+    setFilterProducts(productsCopy);
   };
 
   useEffect(() => {
     setFilterProducts(products);
   }, []);
+
+  useEffect(() => {
+    applyFilter();
+  }, [category, subCategory]);
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -82,7 +107,7 @@ const Collection = () => {
             </p>
           </div>
         </div>
-        {/* Subcatagory Filter */}
+        {/* subCategory Filter */}
         <div
           className={`border border-gray-300 pl-5 py-3 my-5 ${
             showFiilter ? "" : "hidden"
@@ -95,7 +120,7 @@ const Collection = () => {
                 className="w-3"
                 type="checkbox"
                 value={"Topwear"}
-                onChange={toggleSubcatagory}
+                onChange={togglesubCategory}
               />
               Topwear
             </p>
@@ -104,7 +129,7 @@ const Collection = () => {
                 className="w-3"
                 type="checkbox"
                 value={"Bottomwear"}
-                onChange={toggleSubcatagory}
+                onChange={togglesubCategory}
               />
               Bottomwear
             </p>
@@ -113,7 +138,7 @@ const Collection = () => {
                 className="w-3"
                 type="checkbox"
                 value={"Winterwear"}
-                onChange={toggleSubcatagory}
+                onChange={togglesubCategory}
               />
               Winterwear
             </p>
