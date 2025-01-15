@@ -5,10 +5,12 @@ import { IoSearchOutline } from "react-icons/io5";
 import { FiUser } from "react-icons/fi";
 import { FaShoppingBag, FaAngleDoubleLeft } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ShopContext } from "../context/shopContext";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
+  const { getCartCount } = useContext(ShopContext);
 
   return (
     <div className="flex items-center justify-between py-5 font-medium">
@@ -49,7 +51,7 @@ const Navbar = () => {
         <Link to="/cart" className="relative">
           <FaShoppingBag />
           <p className="absolute left-2 top-2 w-4 text-center leading-4 bg-rose-700 text-white aspect-square rounded-full text-[8px]">
-            1
+            {getCartCount()}
           </p>
         </Link>
         <div onClick={() => setVisible(true)}>

@@ -33,6 +33,31 @@ const ShopContextProvider = (props) => {
     setCartItems(cartData);
   };
 
+  const getCartCount = () => {
+    // let totalCount = 0;
+    // for (const items in cartItems) {
+    //   for (const item in cartItems[items]) {
+    //     try {
+    //       if (cartItems[items][item] > 0) {
+    //         totalCount += cartItems[items][item];
+    //       }
+    //     } catch (e) {
+    //       console.log(e);
+    //     }
+    //   }
+    // }
+    // return totalCount;
+    try {
+      return Object.values(cartItems).reduce(
+        (total, catagory) =>
+          total + Object.values(catagory).reduce((sum, count) => sum + count),
+        0
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const value = {
     products,
     currency,
@@ -40,6 +65,7 @@ const ShopContextProvider = (props) => {
     cartItems,
     addToCart,
     sizeAlert,
+    getCartCount,
   };
 
   return (
