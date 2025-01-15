@@ -10,7 +10,7 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [image, setImage] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
-  const { currency } = useContext(ShopContext);
+  const { currency, addToCart, sizeAlert } = useContext(ShopContext);
 
   const fetchProductData = async () => {
     const selectedProduct =
@@ -75,8 +75,18 @@ const Product = () => {
                 </button>
               ))}
             </div>
+            <p
+              className={`text-red-700 font-bold ${
+                sizeAlert ? "block" : "hidden"
+              }`}
+            >
+              Please select a size
+            </p>
           </div>
-          <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">
+          <button
+            onClick={() => addToCart(product._id, selectedSize)}
+            className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
+          >
             ADD TO CART
           </button>
           <hr className="mt-8 sm:w-4/5"></hr>
