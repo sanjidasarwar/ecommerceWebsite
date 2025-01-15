@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/shopContext";
 import { FaRegStar, FaStar } from "react-icons/fa";
+import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
   const { productId } = useParams();
@@ -110,6 +111,11 @@ const Product = () => {
           </p>
         </div>
       </div>
+      {/* Related Products */}
+      <RelatedProducts
+        category={product.category}
+        subCategory={product.subCategory}
+      />
     </div>
   ) : (
     <p className="text-2xl text-center">No Product Found</p>
