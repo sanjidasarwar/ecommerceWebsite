@@ -9,8 +9,6 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   const [sizeAlert, setSizeAlert] = useState(false);
 
-  console.log(cartItems);
-
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
 
