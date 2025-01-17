@@ -50,6 +50,8 @@ import p_img50 from "./p_img50.png";
 import customer_support from "./customer_support.png";
 import exchange_policy from "./exchange_policy.png";
 import return_policy from "./return_policy.png";
+import stripe from "./stripe.png";
+import razor from "./razorpay.png";
 
 export {
   logo,
@@ -104,4 +106,6 @@ export {
   customer_support,
   exchange_policy,
   return_policy,
+  stripe,
+  razor,
 };
