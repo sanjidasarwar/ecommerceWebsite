@@ -8,7 +8,6 @@ const ShopContextProvider = (props) => {
   const delevery_fee = 10;
   const [cartItems, setCartItems] = useState({});
   const [sizeAlert, setSizeAlert] = useState(false);
-  console.log(cartItems);
 
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
@@ -67,9 +66,28 @@ const ShopContextProvider = (props) => {
     return (price * quanitity).toFixed(2);
   };
 
+  const getProductPrice = (products) => {
+    return products.reduce((map, product) => {
+      map[product._id] = product.price;
+      return map;
+    }, {});
+  };
+
   const getCartTotal = () => {
     let total = 0;
-    console.log(Object.values(cartItems));
+    const productsPrice = getProductPrice(products);
+
+    for (const productId in cartItems) {
+      const price = productsPrice[productId];
+      if (price) {
+        const totalProduct = Object.values(cartItems[productId]).reduce(
+          (sum, prev) => sum + prev,
+          0
+        );
+        total += price * totalProduct;
+      }
+    }
+    return total;
   };
 
   const value = {
@@ -82,6 +100,7 @@ const ShopContextProvider = (props) => {
     getCartCount,
     updateQuantity,
     sumOfEachSizeProduct,
+    getCartTotal,
   };
 
   return (

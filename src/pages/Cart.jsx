@@ -52,14 +52,14 @@ const Cart = () => {
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
       <div>
-        {cartData.map((item) => {
+        {cartData.map((item, index) => {
           const cartProduct = products.find(
             (product) => product._id == item._id
           );
 
           return (
             <div
-              key={item._id}
+              key={index}
               className="py-4 border-t border-b text-gray-700 grid grid-cols-[4fr_0.5fr_0.5fr] sm:grid-cols-[4fr_2fr_0.5fr] items-center gap-4"
             >
               <div className="flex items-start gap-6">
