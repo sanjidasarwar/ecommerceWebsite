@@ -8,6 +8,7 @@ const ShopContextProvider = (props) => {
   const delevery_fee = 10;
   const [cartItems, setCartItems] = useState({});
   const [sizeAlert, setSizeAlert] = useState(false);
+  console.log(cartItems);
 
   const addToCart = async (itemId, size) => {
     let cartData = structuredClone(cartItems);
@@ -56,6 +57,12 @@ const ShopContextProvider = (props) => {
     }
   };
 
+  const updateQuantity = (productId, size, quanitity) => {
+    let cartData = structuredClone(cartItems);
+    cartData[productId][size] = quanitity;
+    setCartItems(cartData);
+  };
+
   const value = {
     products,
     currency,
@@ -64,6 +71,7 @@ const ShopContextProvider = (props) => {
     addToCart,
     sizeAlert,
     getCartCount,
+    updateQuantity,
   };
 
   return (
