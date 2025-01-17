@@ -67,6 +67,11 @@ const ShopContextProvider = (props) => {
     return (price * quanitity).toFixed(2);
   };
 
+  const getCartTotal = () => {
+    let total = 0;
+    console.log(Object.values(cartItems));
+  };
+
   const value = {
     products,
     currency,

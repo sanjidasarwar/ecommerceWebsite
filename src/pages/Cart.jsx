@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/shopContext";
 import Title from "../components/Title";
 import { FaRegTrashCan } from "react-icons/fa6";
+import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
   const {
@@ -93,6 +94,11 @@ const Cart = () => {
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+          <CartTotal />
+        </div>
       </div>
     </div>
   );
