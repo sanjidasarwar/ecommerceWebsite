@@ -4,8 +4,13 @@ import Title from "../components/Title";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 const Cart = () => {
-  const { cartItems, products, currency, updateQuantity } =
-    useContext(ShopContext);
+  const {
+    cartItems,
+    products,
+    currency,
+    updateQuantity,
+    sumOfEachSizeProduct,
+  } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
   const handleInputChange = (e, item) => {
@@ -69,7 +74,7 @@ const Cart = () => {
                   <div className="flex items-center gap-5 mt-2">
                     <p>
                       {currency}
-                      {cartData.price}
+                      {sumOfEachSizeProduct(cartProduct.price, item.quantity)}
                     </p>
                     <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
                       {item.size}

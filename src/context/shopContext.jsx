@@ -63,6 +63,10 @@ const ShopContextProvider = (props) => {
     setCartItems(cartData);
   };
 
+  const sumOfEachSizeProduct = (price, quanitity) => {
+    return (price * quanitity).toFixed(2);
+  };
+
   const value = {
     products,
     currency,
@@ -72,6 +76,7 @@ const ShopContextProvider = (props) => {
     sizeAlert,
     getCartCount,
     updateQuantity,
+    sumOfEachSizeProduct,
   };
 
   return (
