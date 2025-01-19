@@ -52,6 +52,7 @@ import exchange_policy from "./exchange_policy.png";
 import return_policy from "./return_policy.png";
 import stripe from "./stripe.png";
 import razor from "./razorpay.png";
+import aboutimg from "./aboutimg.png";
 
 export {
   logo,
@@ -108,4 +109,5 @@ export {
   return_policy,
   stripe,
   razor,
+  aboutimg,
 };
